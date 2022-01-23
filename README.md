@@ -45,6 +45,11 @@ pip install pdfminer.six
 
 
 ### 3. 실행하기
+  ```
+  python main.py
+  ```
+  ![image](https://user-images.githubusercontent.com/77478240/150665256-fd5c7487-7977-4c0c-8f57-c6c261792797.png)
+
   정상적으로 실행되면 md 파일안에 목차가 쓰여져서 생성되요
   ![image](https://user-images.githubusercontent.com/77478240/150665121-52a6ab64-9e44-4783-9aaa-e7b70e758e03.png)
 
