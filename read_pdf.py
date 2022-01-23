@@ -4,6 +4,8 @@ from pdfminer.layout import LAParams
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from datetime import datetime
+import re
+
 
 today = datetime.today().strftime('%m%d')
 HANDOUT_MINE_NAME = 'handout_mine'
@@ -34,4 +36,9 @@ def convert_pdf_to_txt(HANDOUT_MINE_PATH):
     return text
 
 
-print(convert_pdf_to_txt(HANDOUT_MINE_PATH))
+pdf_to_text = convert_pdf_to_txt(HANDOUT_MINE_PATH)
+
+
+def get_contents(pdf_to_text):
+    reg = re.compile('\d+\.\s.+')
+    return reg.findall(pdf_to_text)
