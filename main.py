@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-
+from read_pdf import get_contents
 today = datetime.today().strftime('%m%d')
 
 HWS_NAME = 'HWS'
@@ -16,9 +16,18 @@ def mkdir_today():
 def touch_today_file():
     HW_name = today+'_homework.md'
     WS_name = today+'_workshop.md'
+    name_list = [HW_name, WS_name]
+    contents = get_contents()
 
-    f = open(HWM_PATH+HW_name, 'w')
-    f.close()
+    for idx, name in enumerate(name_list):
+        f = open(HWM_PATH+name, 'w')
 
-    f = open(HWM_PATH+WS_name, 'w')
-    f.close()
+        f.write(f'# {name[:-3]}\n')
+
+        for i in contents[idx]:
+            f.write('\n\n## '+i)
+        f.close()
+
+
+mkdir_today()
+touch_today_file()

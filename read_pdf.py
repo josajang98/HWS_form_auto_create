@@ -1,15 +1,17 @@
 from io import StringIO
+from unittest import result
 from pdfminer.pdfpage import PDFPage
 from pdfminer.layout import LAParams
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from datetime import datetime
 import re
+import os
 
 
 today = datetime.today().strftime('%m%d')
 HANDOUT_MINE_NAME = 'handout_mine'
-HANDOUT_MINE_PATH = f'../{HANDOUT_MINE_NAME}/{today}/hws/python_04_homework.pdf'
+HANDOUT_MINE_PATH = f'../{HANDOUT_MINE_NAME}/{today}/hws/'
 
 
 def convert_pdf_to_txt(HANDOUT_MINE_PATH):
@@ -36,9 +38,25 @@ def convert_pdf_to_txt(HANDOUT_MINE_PATH):
     return text
 
 
-pdf_to_text = convert_pdf_to_txt(HANDOUT_MINE_PATH)
+file_list = os.listdir(HANDOUT_MINE_PATH)
 
 
-def get_contents(pdf_to_text):
+def get_contents():
+    pdf_to_text_list = [convert_pdf_to_txt(
+        HANDOUT_MINE_PATH+i) for i in file_list]
+
     reg = re.compile('\d+\.\s.+')
-    return reg.findall(pdf_to_text)
+
+    result = []
+    for i in map(reg.findall, pdf_to_text_list):
+        title = i[0]
+
+        def inner(x):
+            if x == title:
+                return False
+            else:
+                return True
+
+        result.append(list(filter(inner, i)))
+
+    return result
