@@ -10,8 +10,13 @@ import os
 
 
 today = datetime.today().strftime('%m%d')
+
+# 본인 handout_mine 폴더명으로 수정하기
 HANDOUT_MINE_NAME = 'handout_mine'
+
 HANDOUT_MINE_PATH = f'../{HANDOUT_MINE_NAME}/{today}/hws/'
+
+# pdt to txt인데 저도 긁어온거에요 한줄한줄 해석안하셔도 되요
 
 
 def convert_pdf_to_txt(HANDOUT_MINE_PATH):
@@ -38,16 +43,20 @@ def convert_pdf_to_txt(HANDOUT_MINE_PATH):
     return text
 
 
+# hws 폴더 안에 있는 파일 목록
 file_list = os.listdir(HANDOUT_MINE_PATH)
 
 
 def get_contents():
+    # 파일 목록 별로 pdf 텍스트 리스트에 담기
     pdf_to_text_list = [convert_pdf_to_txt(
         HANDOUT_MINE_PATH+i) for i in file_list]
 
-    reg = re.compile('\d+\.\s.+')
+    reg = re.compile('\d+\.\s.+')  # 정규식으로 목차 분류
 
     result = []
+
+    # pdf 페이지 별로 title가 한번씩 있어서 제거
     for i in map(reg.findall, pdf_to_text_list):
         title = i[0]
 
