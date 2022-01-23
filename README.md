@@ -20,6 +20,7 @@
 ### 2. pdfminer.six 설치
 
 pdf 파일을 읽어오는 모듈입니다
+클론 받아서 생성된 HWS_form_auto_create 폴더에서 git mash 열어서 명령어 입력 해주기
 
 ```
 pip install pdfminer.six
@@ -31,14 +32,14 @@ pip install pdfminer.six
 
 상대경로로 파일 읽고 생성하기 때문에 본인 디렉토리명에 맞게 변경해줘야 해요
 
-- main.py 파일 열기
+- main.py 파일을 vscode로 열어서 수정 후 저장해주기
 
   HWS_NAME, HANDOUT_MINE_NAME 상수 값을 바꿔주세요
   디렉토리명에 맞게 바꿔주시면 됩니다
   ![image](https://user-images.githubusercontent.com/77478240/150665037-08801fee-7858-4881-876a-80e44a15c388.png)
 
 
-- read_pdf.py 파일 열기
+- read_pdf.py 파일을 vscode로 열어서 수정 후 저장해주기
 
   HANDOUT_MINE_NAME 상수 값을 바꿔주세요
   디렉토리명에 맞게 바꿔주시면 됩니다
@@ -46,6 +47,7 @@ pip install pdfminer.six
 
 
 ### 3. 실행하기
+  클론 받아서 생성된 HWS_form_auto_create 폴더에서 git mash 열어서 명령어 입력 해주기
   ```
   python main.py
   ```
