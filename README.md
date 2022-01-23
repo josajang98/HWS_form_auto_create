@@ -27,17 +27,18 @@ pip install pdfminer.six
 
 
 
-### 3. 디렉토리명 상수 변경
+### 3. vscode를 열어서 디렉토리명 상수 변경
 
 상대경로로 파일 읽고 생성하기 때문에 본인 디렉토리명에 맞게 변경해줘야 해요
 
-- main.py
+- main.py 파일 열기
+
   HWS_NAME, HANDOUT_MINE_NAME 상수 값을 바꿔주세요
   디렉토리명에 맞게 바꿔주시면 됩니다
   ![image](https://user-images.githubusercontent.com/77478240/150665037-08801fee-7858-4881-876a-80e44a15c388.png)
 
 
-- read_pdf.py
+- read_pdf.py 파일 열기
 
   HANDOUT_MINE_NAME 상수 값을 바꿔주세요
   디렉토리명에 맞게 바꿔주시면 됩니다
