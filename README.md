@@ -47,9 +47,9 @@ pip install pdfminer.six
   ![image](https://user-images.githubusercontent.com/77478240/150665073-8d83665e-d475-4168-840e-90b6fa38d35a.png)
 
 
-### 3. 실행하기
+### 4. 실행하기
   1. 교수님이 오늘 올려주신 과제를 handsout_notpush에 저장
-  2. handsoyt_notpush에서 handsout_mine 으로 오늘 과제 복사
+  2. handsout_notpush에서 handsout_mine 으로 오늘 과제 복사
   3. 클론 받아서 생성된 HWS_form_auto_create 폴더에서 git bash 열어서 명령어 입력 해주기
 
 
