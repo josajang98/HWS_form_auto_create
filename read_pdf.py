@@ -50,7 +50,7 @@ file_list = os.listdir(HANDOUT_MINE_PATH)
 def get_contents():
     # 파일 목록 별로 pdf 텍스트 리스트에 담기
     pdf_to_text_list = [convert_pdf_to_txt(
-        HANDOUT_MINE_PATH+i) for i in file_list]
+        HANDOUT_MINE_PATH+i) for i in file_list if i[-3:] == 'pdf']
 
     reg = re.compile('\d+\.\s.+')  # 정규식으로 목차 분류
 
