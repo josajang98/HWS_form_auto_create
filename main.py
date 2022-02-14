@@ -31,9 +31,10 @@ def touch_today_file():
         # title 작성
         f.write(f'# {name[:-3]}\n')
 
-        # 목차 작성
-        for i in contents[idx]:
-            f.write('\n\n## '+i)
+        if contents:
+            # 목차 작성
+            for i in contents[idx]:
+                f.write('\n\n## '+i)
 
         f.close()
 
