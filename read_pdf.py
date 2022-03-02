@@ -60,18 +60,18 @@ def get_contents():
 
     reg = re.compile('\d+\.\s.+')  # 정규식으로 목차 분류
 
-    result = []
+    result = list(map(reg.findall, pdf_to_text_list))
 
     # pdf 페이지 별로 title가 한번씩 있어서 제거
-    for i in map(reg.findall, pdf_to_text_list):
-        title = i[0]
+    # for i in map(reg.findall, pdf_to_text_list):
+    #     title = i[0]
 
-        def inner(x):
-            if x == title:
-                return False
-            else:
-                return True
+    #     def inner(x):
+    #         if x == title:
+    #             return False
+    #         else:
+    #             return True
 
-        result.append(list(filter(inner, i)))
+    #     result.append(list(filter(inner, i)))
 
     return result
