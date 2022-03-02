@@ -63,15 +63,18 @@ def get_contents():
     result = list(map(reg.findall, pdf_to_text_list))
 
     # pdf 페이지 별로 title가 한번씩 있어서 제거
-    # for i in map(reg.findall, pdf_to_text_list):
-    #     title = i[0]
+    try:
+        for i in map(reg.findall, pdf_to_text_list):
+            title = i[0]
 
-    #     def inner(x):
-    #         if x == title:
-    #             return False
-    #         else:
-    #             return True
+            def inner(x):
+                if x == title:
+                    return False
+                else:
+                    return True
 
-    #     result.append(list(filter(inner, i)))
+            result.append(list(filter(inner, i)))
+    except:
+        pass
 
     return result
